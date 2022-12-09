@@ -7,21 +7,33 @@
 
 body {
   background: linear-gradient(135deg, rgb(77, 88, 107), rgb(18, 21, 26));
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  transition: 0.3s;
+  position: relative;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  max-width: 100%;
   width: 100%;
-  min-height: 100vh;
-  margin-top: 5%;
+  
   pointer-events: none;
 }
 .wrapper::after {
@@ -90,17 +102,23 @@ body {
 }
 
 .project__title {
+  width: 100%;
   font-family: 'Bakbak-One';
-  font-size: 60px;
+  font-size: 50px;
   color: #fff;
   font-weight: 700;
   margin-bottom: 30px;
+  text-align: start;
 }
 
 .options {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  width: 100%;
+  background: rgba(44, 44, 44, 0.7);
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px;
+  z-index: 100;
 }
 .amount{
   display: flex;
@@ -150,4 +168,21 @@ body {
 }
 .amount__btn:hover{
   transform: scale(1.05);
+}
+
+@media (max-width: 1120px){
+  .project__title{
+    font-size: 35px;
+  }
+  .wrapper{
+    transform: scale(0.7);
+  }
+}
+@media (max-width: 500px){
+  .project__title{
+    font-size: 35px;
+  }
+  .wrapper{
+    transform: scale(0.5);
+  }
 }
